@@ -3,22 +3,36 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "lab3"
+name = "lab4"
 version = "0.1.0"
 description = "Лабораторная работа №4"
-readme = "README.md"
 authors = [
     {name = "ilya", email = "example@mail.com"}
 ]
-license = {text = "MIT"}
+license = "MIT"
 requires-python = ">=3.13"
 dependencies = []
 
+[project.optional-dependencies]
+dev = [
+    "black==26.3.1",
+    "flake8==7.3.0",
+    "flake8-pyproject==1.2.4"
+]
+
 [tool.black]
 line-length = 79
-target-version = ["py39"]
+target-version = ["py313"]
 
 [tool.flake8]
 max-line-length = 79
 extend-ignore = ["E203", "W503"]
 exclude = [".venv", "build", "dist"]
+
+[tool.setuptools]
+py-modules = [
+    "investment_system",
+    "robot_vacuum",
+    "romania_graph",
+    "warehouse_management"
+]
